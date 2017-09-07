@@ -10,6 +10,7 @@ RUN apk -U --no-cache add --virtual .build-dependencies ca-certificates wget && 
     rm master.tar.gz && \
     cd doctorkafka-master && \
     mvn package -pl drkafka -am -Dmaven.test.skip=true && \
-    mv drkafka/target/* /etc/doctor-kafka/. && \
+    mv drkafka/target/doctorkafka-0.1.0.jar /etc/doctor-kafka/. && \
+    mv drkafka/target/lib /etc/doctor-kafka/. && \
     rm -rf /tmp/doctorkafka-master && \
     apk del .build-dependencies
