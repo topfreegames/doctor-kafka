@@ -14,3 +14,6 @@ RUN apk -U --no-cache add --virtual .build-dependencies ca-certificates wget && 
     mv drkafka/target/lib /etc/doctor-kafka/. && \
     rm -rf /tmp/doctorkafka-master && \
     apk del .build-dependencies
+
+COPY run.sh /etc/doctor-kafka
+RUN chmod +x run.sh
