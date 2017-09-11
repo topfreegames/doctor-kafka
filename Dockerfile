@@ -17,3 +17,6 @@ RUN apk -U --no-cache add --virtual .build-dependencies ca-certificates wget && 
 
 COPY run.sh /etc/doctor-kafka
 RUN chmod +x run.sh
+
+ENTRYPOINT ["/etc/doctor-kafka/run.sh"]
+CMD ["/etc/doctor-kafka/run.sh"]
